@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import './styles/theme.css';
 import QuestionInput from './components/QuestionInput';
 import CoinToss from './components/CoinToss';
@@ -110,6 +111,8 @@ function AppContent() {
       <footer>
         <p>&copy; {new Date().getFullYear()} Mystical AI</p>
       </footer>
+
+      <Analytics />
 
       <style>{`
         header {

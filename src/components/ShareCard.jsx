@@ -1,5 +1,6 @@
 import React from 'react';
 import HexagramDisplay from './HexagramDisplay';
+import { QRCodeSVG } from 'qrcode.react';
 
 const ShareCard = ({ question, lines, hexagram, summary, t, lang, innerRef }) => {
     // We assume this component is rendered off-screen or in a hidden container
@@ -46,8 +47,12 @@ const ShareCard = ({ question, lines, hexagram, summary, t, lang, innerRef }) =>
 
                 <footer className="share-footer">
                     <div className="qr-placeholder">
-                        {/* QR Code could go here */}
-                        <div className="qr-box"></div>
+                        <QRCodeSVG
+                            value="https://iching-answer-book.xyz"
+                            size={50}
+                            fgColor="#D4AF37"
+                            bgColor="transparent"
+                        />
                         <span>Scan to Ask</span>
                     </div>
                     <div className="date">{new Date().toLocaleDateString()}</div>
@@ -175,12 +180,7 @@ const ShareCard = ({ question, lines, hexagram, summary, t, lang, innerRef }) =>
                     align-items: center;
                     gap: 10px;
                 }
-                .qr-box {
-                    width: 40px;
-                    height: 40px;
-                    background: #fff; /* Placeholder for actual QR code */
-                    opacity: 0.8;
-                }
+
             `}</style>
         </div>
     );

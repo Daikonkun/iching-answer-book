@@ -11,7 +11,7 @@ export async function getAIInterpretation(provider, apiKey, question, hexagram, 
            不要给模棱两可的“场面话”，要像命运的预言一样深刻。如果卦象显示有风险，请直言不讳地警示；如果卦象吉利，请明确指引行动方向。
            请用优美、深邃但易懂的中文回答。
            
-           **最后，请务必单独提供一段100字以内的“精炼总结”，用于社交分享卡片。请以“### 总结”作为这段的开头。内容纯粹为总结，不要包含“字数统计”或任何其他元数据。**`
+           **最后，请务必单独提供一段100字以内的“精炼总结”，用于社交分享卡片。请以“### 总结”作为这段的开头。绝对不要在结尾包含“（xxx字）”这样的字数统计，也不要包含任何解释性元数据，只提供纯粹的总结文本。**`
         : `I am sincerely consulting the I Ching.
            Question: ${question}
            Hexagram: #${hexagram.number} ${hexagram.name} (${hexagram.english}).

@@ -36,9 +36,12 @@ const ResultView = ({ question, lines, onReset, aiConfig }) => {
                         // Look for "### Summary" or "### 总结"
                         const parts = text.split(/###\s*(Summary|总结|精炼总结)/i);
                         if (parts.length > 2) {
-                            // parts[0] is main text, parts[1] is "Summary" keyword, parts[2] is the actual summary
+                            // part[2] is the actual summary
+                            // Force cleaning of metadata like (120字) or (45 words)
+                            let cleanSummary = parts[2].trim();
+                            cleanSummary = cleanSummary.replace(/（\d+字）/g, '').replace(/\(\d+字\)/g, '').replace(/\(\d+\s*words\)/i, '');
                             setAiResponse(parts[0].trim());
-                            setSummary(parts[2].trim());
+                            setSummary(cleanSummary);
                         } else {
                             setAiResponse(text);
                             // Fallback summary if not found: take first 100 chars? Or just blank.

@@ -1,0 +1,7 @@
+/* Global resets handled in theme.css mostly */
+/* Ensure this file is empty or just standard resets if needed */
+body {
+  background-color: #1a1a1a;
+  /* fallback */
+  color: white;
+}
